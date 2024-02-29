@@ -1,20 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native';
+import {Header} from '@components/client/header/index';
+import { BusinessAnalysis, CurrentMonthAnalysis, Menu } from '@components/client/dashboard/index';
+import { Footer } from '@components/client/footer/footer';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+        <SafeAreaView>
+          <Header />
+          <BusinessAnalysis />
+          <CurrentMonthAnalysis />
+          <Menu />
+          <Footer />
+      </SafeAreaView>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
